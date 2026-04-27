@@ -4,9 +4,9 @@ from glob import glob
 
 import torch
 from torch_geometric.data import InMemoryDataset, extract_zip
-from utils.read import read_mesh
-
 from tqdm import tqdm
+
+from utils.read import read_mesh
 
 
 class CoMA(InMemoryDataset):

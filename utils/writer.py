@@ -1,8 +1,9 @@
+import json
 import os
 import time
-import torch
-import json
 from glob import glob
+
+import torch
 
 
 class Writer:

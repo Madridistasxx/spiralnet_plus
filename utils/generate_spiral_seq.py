@@ -1,6 +1,6 @@
+import numpy as np
 import openmesh as om
 from sklearn.neighbors import KDTree
-import numpy as np
 
 
 def _next_ring(mesh, last_ring, other):

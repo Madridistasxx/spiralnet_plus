@@ -1,6 +1,6 @@
 from .dataloader import DataLoader
-from .utils import makedirs, to_sparse, preprocess_spiral
 from .read import read_mesh
+from .utils import makedirs, preprocess_spiral, to_sparse
 
 ___all__ = [
     'DataLoader',

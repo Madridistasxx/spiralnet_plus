@@ -1,16 +1,19 @@
-import pickle
 import argparse
 import os
 import os.path as osp
+import pickle
+
 import numpy as np
 import torch
 import torch.backends.cudnn as cudnn
 import torch_geometric.transforms as T
+
+from datasets import MeshData
+from reconstruction import AE, eval_error, run
+from utils import DataLoader, mesh_sampling, utils, writer
+
 from psbody.mesh import Mesh
 
-from reconstruction import AE, run, eval_error
-from datasets import MeshData
-from utils import utils, writer, DataLoader, mesh_sampling
 
 parser = argparse.ArgumentParser(description='mesh autoencoder')
 parser.add_argument('--exp_name', type=str, default='interpolation_exp')

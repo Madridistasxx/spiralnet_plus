@@ -1,7 +1,6 @@
 import torch.utils.data
 from torch.utils.data.dataloader import default_collate
-
-from torch_geometric.data import Data, Batch
+from torch_geometric.data import Batch, Data
 
 
 class DataLoader(torch.utils.data.DataLoader):

@@ -1,9 +1,11 @@
-import math
 import heapq
-import numpy as np
+import math
 import os
+
+import numpy as np
 import scipy.sparse as sp
-from psbody.mesh import Mesh
+
+# from psbody.mesh import Mesh
 
 
 def row(A):
@@ -80,7 +82,7 @@ def vertex_quadrics(mesh):
     return v_quadrics
 
 
-def setup_deformation_transfer(source, target, use_normals=False):
+def setup_deformation_transfer(source, target):
     rows = np.zeros(3 * target.v.shape[0])
     cols = np.zeros(3 * target.v.shape[0])
     coeffs_v = np.zeros(3 * target.v.shape[0])
@@ -281,7 +283,7 @@ def generate_transform_matrices(mesh, factors):
        F: a list of faces
     """
 
-    factors = map(lambda x: 1.0 / x, factors)
+    factors = list(map(lambda x: 1.0 / x, factors))
     M, A, D, U, F, V = [], [], [], [], [], []
     F.append(mesh.f)  # F[0]
     V.append(mesh.v)
