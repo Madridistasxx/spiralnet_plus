@@ -5,7 +5,7 @@ import os
 import numpy as np
 import scipy.sparse as sp
 
-# from psbody.mesh import Mesh
+from psbody.mesh import Mesh
 
 
 def row(A):
@@ -149,11 +149,11 @@ def qslim_decimator_transformer(mesh, factor=None, n_verts_desired=None):
     Qv = vertex_quadrics(mesh)
 
     # fill out a sparse matrix indicating vertex-vertex adjacency
-    # from psbody.mesh.topology.connectivity import get_vertices_per_edge
+    from psbody.mesh.topology.connectivity import get_vertices_per_edge
     vert_adj = get_vertices_per_edge(mesh.v, mesh.f)
-    # vert_adj = sp.lil_matrix((len(mesh.v), len(mesh.v)))
-    # for f_idx in range(len(mesh.f)):
-    #     vert_adj[mesh.f[f_idx], mesh.f[f_idx]] = 1
+    vert_adj = sp.lil_matrix((len(mesh.v), len(mesh.v)))
+    for f_idx in range(len(mesh.f)):
+        vert_adj[mesh.f[f_idx], mesh.f[f_idx]] = 1
 
     vert_adj = sp.csc_matrix(
         (vert_adj[:, 0] * 0 + 1, (vert_adj[:, 0], vert_adj[:, 1])),

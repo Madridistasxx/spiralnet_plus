@@ -1,4 +1,4 @@
-# import openmesh as om
+import openmesh as om
 from datasets import CoMA
 
 
