@@ -14,7 +14,7 @@ from utils import utils, writer, DataLoader, mesh_sampling
 
 parser = argparse.ArgumentParser(description='mesh autoencoder')
 parser.add_argument('--exp_name', type=str, default='interpolation_exp')
-parser.add_argument('--dataset', type=str, default='CoMA')
+parser.add_argument('--dataset', type=str, default='ddacs')
 parser.add_argument('--split', type=str, default='interpolation')
 parser.add_argument('--test_exp', type=str, default='bareteeth')
 parser.add_argument('--n_threads', type=int, default=4)
