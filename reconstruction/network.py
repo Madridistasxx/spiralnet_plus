@@ -51,7 +51,6 @@ class AE(nn.Module):
         self.in_channels = in_channels
         self.out_channels = out_channels
         self.latent_channels = latent_channels
-        self.latent_channels = latent_channels
         self.spiral_indices = spiral_indices
         self.down_transform = down_transform
         self.up_transform = up_transform

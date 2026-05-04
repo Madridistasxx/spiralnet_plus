@@ -1,7 +1,8 @@
 import torch
 from torch_geometric.data import Data
 from torch_geometric.utils import to_undirected
-import openmesh as om
+
+# import openmesh as om
 
 def read_mesh(path):
     mesh = om.read_trimesh(path)

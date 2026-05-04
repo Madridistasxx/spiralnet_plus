@@ -1,4 +1,4 @@
-import openmesh as om
+# import openmesh as om
 from datasets import CoMA
 
 
@@ -63,6 +63,6 @@ class MeshData(object):
              self.mean) / self.std).view(-1, 3)
         print('Done!')
 
-    def save_mesh(self, fp, x):
-        x = x * self.std + self.mean
-        om.write_mesh(fp, om.TriMesh(x.numpy(), self.template_face))
+    # def save_mesh(self, fp, x):
+    #     x = x * self.std + self.mean
+    #     om.write_mesh(fp, om.TriMesh(x.numpy(), self.template_face))
